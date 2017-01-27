@@ -23,6 +23,7 @@ public class ReverseOrder {
 		{
 			System.out.println(numbers[i]);
 		}
+		s.close();
 	}
 
 }

@@ -13,62 +13,82 @@ public class ArrayProjAsAClass
 
     arrayPrint(scores);// void method ..
 
-//    System.out.println("\nSum of scores is " + arraySum(scores));
-//    System.out.println("Avg of scores is " + arrayAvg(scores));
-//    System.out.println("Max of scores is " + arrayMax(scores));
-//    System.out.println("scores after arrayReverse ");
-//    arrayReverse(scores);
-//    arrayPrint(scores);
-//   System.out.println("scores after arrayShiftLeft ");
-//   arrayShiftLeft(scores,100);
-//    arrayPrint(scores);
+    System.out.println("Sum of scores is " + arraySum(scores));
+    System.out.println("Avg of scores is " + arrayAvg(scores));
+    System.out.println("Max of scores is " + arrayMax(scores));
+    System.out.println("scores after arrayReverse ");
+    arrayReverse(scores);
+    arrayPrint(scores);
+    System.out.println("scores after arrayShiftLeft ");
+    arrayShiftLeft(scores,100);
+    arrayPrint(scores);
+    if(arrayHasDuplicates(scores))
+    	System.out.println("There are duplicate scores");
+    else
+    	System.out.println("There are no duplicate scores");
+    
 //    System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
   } // end main()
 
-//***********************************************************************
 
 //prints all the elements of a on one line then prints a new line 
   public static void arrayPrint(int a[]) 
   {
-    // YOUR CODE GOES HERE
+	  for(int i=0; i<a.length; i++)
+	  {
+		  System.out.print(a[i]);
+		  System.out.print(" ");
+	  }
+	  System.out.println();
   }
   
 //***********************************************************************
 
 // returns the sum of all the elements in array a
- /* public static int arraySum(int a[]) 
+  public static int arraySum(int a[]) 
   {
-    // YOUR CODE GOES HERE 
+	  int total = 0;
+	  for(int x: a)
+	  {
+		  total += x;
+	  }
+	  return total;
   }
-  */
+  
 //***********************************************************************
 
 // returns the average of all the elements in array a
 // HINT: arrayAvg returns a double !!!!!!!
 //  you may call method arraySum)
-/*  public static double arrayAvg(int a[]) 
+  public static double arrayAvg(int a[]) 
   {
-      // YOUR CODE GOES HERE  
+	  return (double)arraySum(a)/a.length;
   }
-  */
+  
 //***********************************************************************
  
 //returns the maximum value of all the elements in array a
- /* public static int arrayMax(int a[]) 
+  public static int arrayMax(int a[]) 
   {
-  	// keep track of the index of the current maximum value
-    // YOUR CODE GOES HERE
+	  int max = a[0];
+	  for(int i=1;i<a.length;i++)
+	  {
+		  max = Math.max(max, a[i]);
+	  }
+	  return max;
   }
-  */
+  
 //***********************************************************************
   
 //replace a[x] with a[y] and replace a[y] with a[x] you will need to use int
 //temp as a temporary variable to hold the value a[x] as you assign a[y] to a[x]
   public static void swap(int a[], int x, int y) 
   {
-    int temp = 0;
-    // YOUR CODE GOES HERE
+	  int temp = 0;
+	  temp = a[x];
+	  a[x] = a[y];
+	  a[y] = temp;
   }
   
 //***********************************************************************
@@ -77,7 +97,10 @@ public class ArrayProjAsAClass
 //(you may call the swap method)  DO NOT JUST PRINT IT BACKWARDS 
   public static void arrayReverse(int a[]) 
   {
-    // YOUR CODE GOES HERE
+	  for(int i=0; i<a.length/2; i++)
+	  {
+		  swap(a, i, a.length-i-1);
+	  }
   }
 
 //***********************************************************************
@@ -86,19 +109,29 @@ public class ArrayProjAsAClass
 //to the last element of a[] (so the value in a[0] will be overwritten)
   public static void arrayShiftLeft(int a[], int x) 
   {
-    // YOUR CODE GOES HERE
+    for(int i=0; i<a.length-1; i++)
+    {
+    	a[i]=a[i+1];
+    }
+    a[a.length-1] = x;
   }
 
 //***********************************************************************
  
 //returns true if any element occurs twice or more in a[]... false if all
 //elements are unique
-/*  public static boolean arrayHasDuplicates(int a[]) 
+  public static boolean arrayHasDuplicates(int a[]) 
   {
-    // YOUR CODE GOES HERE
+    for(int i=0; i<a.length-1; i++)
+    {
+    	for(int j=0; j<a.length; j++)
+    	{
+    		if(j != i && a[j] == a[i])
+    			return true;
+    	}
+    }
+    return false;
   }
 
-  //***********************************************************************
-*/
 } 
 

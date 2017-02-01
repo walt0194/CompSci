@@ -22,7 +22,7 @@ public class CD
 
 	public String toString()
 	{
-		return "Title:"+title+"\nArtist: "+artist+"\nPrice"+price+"Tracks"+numTrax;
+		return "Title: "+title+"\nArtist: "+artist+"\nPrice: "+price+"\nTracks: "+numTrax;
 	}
 
 }

@@ -9,17 +9,17 @@ public class ArrayProjAsAClass
   {
     System.out.println("ArrayProj\n");
     
-    int scores[] = { 92, 88, 85, 99, 67, 85, 44, 77 };
+    int scores[] = { 92, 88, 84, 99, 67, 85, 44, 77 };
 
     arrayPrint(scores);// void method ..
 
     System.out.println("Sum of scores is " + arraySum(scores));
     System.out.println("Avg of scores is " + arrayAvg(scores));
     System.out.println("Max of scores is " + arrayMax(scores));
-    System.out.println("scores after arrayReverse ");
+    System.out.println("scores after arrayReverse: ");
     arrayReverse(scores);
     arrayPrint(scores);
-    System.out.println("scores after arrayShiftLeft ");
+    System.out.println("scores after arrayShiftLeft: ");
     arrayShiftLeft(scores,100);
     arrayPrint(scores);
     if(arrayHasDuplicates(scores))
@@ -124,9 +124,9 @@ public class ArrayProjAsAClass
   {
     for(int i=0; i<a.length-1; i++)
     {
-    	for(int j=0; j<a.length; j++)
+    	for(int j=i+1; j<a.length; j++)
     	{
-    		if(j != i && a[j] == a[i])
+    		if(a[j] == a[i])
     			return true;
     	}
     }

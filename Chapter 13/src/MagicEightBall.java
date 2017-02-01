@@ -6,7 +6,7 @@ public class MagicEightBall {
 	{
 		Scanner s = new Scanner(System.in);
 		
-		String [] responses = {"Try again later",""}; //add responses
+		String [] responses = {"Try again later","Yes", "Probably", "Maybe", "For Certain", "Unlikely", "Definatly Not", "Impossible to say"}; 
 		
 		System.out.println("Ask a question");
 		

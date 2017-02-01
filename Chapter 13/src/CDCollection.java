@@ -39,9 +39,9 @@ public class CDCollection
 	// method which will list all the Cds to the output
 	public void printItAll()
 	{
-		for(CD x:library)
+		for(int i=0;i<totalCds;i++)
 		{
-			System.out.println("\n"+x);
+			System.out.println("\n"+library[i]);
 		}
 	}
 }

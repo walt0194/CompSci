@@ -1,4 +1,4 @@
-public class binaryTranslate {
+public class BinaryTranslate {
 
 	public static void main(String[] args) 
 	{
@@ -20,7 +20,5 @@ public class binaryTranslate {
 		}
 		
 		System.out.println(result);
-		
-		System.out.println("oa".indexOf("a"));
 	}
 }

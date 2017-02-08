@@ -20,5 +20,7 @@ public class binaryTranslate {
 		}
 		
 		System.out.println(result);
+		
+		System.out.println("oa".indexOf("a"));
 	}
 }
